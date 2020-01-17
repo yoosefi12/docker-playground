@@ -3,6 +3,11 @@ call plug#begin('~/.vim/plugged')
 " Add coco nvim pluging
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'derekwyatt/vim-scala'
+
+" Configuration for vim-scala
+au BufRead,BufNewFile *.sbt set filetype=scala
+
 
 call plug#end()
 
