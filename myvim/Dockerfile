@@ -27,4 +27,25 @@ RUN update-alternatives --set editor /usr/local/bin/vim
 RUN update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
 RUN update-alternatives --set vi /usr/local/bin/vim
 
+ENV JAVA_HOME /usr/bin/java
+
+#Installing nodejs and yarn (nodejs package manager)
+
+RUN apt-get install -y curl software-properties-common \ 
+	&& curl -sL https://deb.nodesource.com/setup_12.x | bash - \ 
+	&& apt-get install -y nodejs
+
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+	&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \ 
+	&& apt-get update && apt-get install -y yarn
+
+#Installing vim-plug
+RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+#Adding custom vimrc
+COPY .vimrc ~/
+
+
 CMD ["/bin/bash"]
