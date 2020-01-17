@@ -45,7 +45,8 @@ RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 
 #Adding custom vimrc
-COPY .vimrc ~/
+COPY myvimrc /root/.vimrc
+
 
 
 CMD ["/bin/bash"]
