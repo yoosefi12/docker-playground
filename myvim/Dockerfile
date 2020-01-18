@@ -27,7 +27,7 @@ RUN update-alternatives --set editor /usr/local/bin/vim
 RUN update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
 RUN update-alternatives --set vi /usr/local/bin/vim
 
-ENV JAVA_HOME /usr/bin/java
+ENV JAVA_HOME /usr
 
 #Installing nodejs and yarn (nodejs package manager)
 
