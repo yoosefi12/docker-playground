@@ -1,6 +1,6 @@
 # Vim with Scala Metals  
 
-This repository tends to install and config vim for developing scala applications using docker file.
+This repository tends to install and config vim for developing scala applications using docker.
 
 It's still being maintaied. 
 
