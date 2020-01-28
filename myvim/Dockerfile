@@ -1,4 +1,4 @@
-FROM ubuntu-jdk-scala:2.1
+FROM ubuntu-jdk-scala:alpha-0.1
 
 
 RUN apt-get update && apt-get -f install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -47,6 +47,8 @@ RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #Adding custom vimrc
 COPY myvimrc /root/.vimrc
 
+#Install vim plugins non-interactively from command line 
+#RUN vim +'PlugInstall --sync' +qa
 
 
 CMD ["/bin/bash"]
