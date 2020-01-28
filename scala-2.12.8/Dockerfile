@@ -1,9 +1,9 @@
-FROM debian
+FROM ubuntu:18.04
 
 #Installing java
-ADD jdk8u232-linux64.tar.gz /root/java/
-ENV JAVA_HOME /root/java/jdk8u232
-ENV PATH="/root/java/jdk8u232/bin:${PATH}"
+
+RUN apt-get update && apt-get install -y openjdk-8-jdk
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 
 #Installing wget
 RUN apt-get update && apt-get install -y wget
@@ -13,6 +13,5 @@ RUN apt-get update && apt-get install -y wget
 RUN mkdir /root/scala
 COPY scala-2.12.8.deb /root/scala
 RUN dpkg -i /root/scala/scala-2.12.8.deb
-
 
 CMD ["/bin/bash"]
