@@ -5,7 +5,9 @@ This repository tends to install and config vim for developing scala application
 It's still being maintaied. 
 
 How to use :
+
 $> ./build.sh
+
 $> vim
 
 use  :PlugInstall in vim environment or use '$> vim +'PlugInstall --sync' +qa'
