@@ -49,6 +49,6 @@ COPY myvimrc /root/.vimrc
 
 #Install vim plugins non-interactively from command line 
 #RUN vim +'PlugInstall --sync' +qa
-
+RUN vim +PlugInstall +qall
 
 CMD ["/bin/bash"]
