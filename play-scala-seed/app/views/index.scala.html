@@ -1,5 +1,7 @@
-@()
+@(ip:String,  hostname:String)
 
-@main("Welcome to Play") {
-  <h1>Welcome to Play!</h1>
+@main("Container Info") {
+  <h1>Container Info</h1>
+  <h2>IP : @ip</h2>
+  <h2>HOST : @hostname</h2>
 }

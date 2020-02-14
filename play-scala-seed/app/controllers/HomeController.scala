@@ -1,5 +1,7 @@
 package controllers
 
+import java.net.InetAddress
+
 import javax.inject._
 import play.api._
 import play.api.mvc._
@@ -19,6 +21,10 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    * a path of `/`.
    */
   def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index())
+
+    val ip = InetAddress.getLocalHost();
+    val hostname = ip.getHostName();
+
+    Ok(views.html.index(ip.toString, hostname))
   }
 }
