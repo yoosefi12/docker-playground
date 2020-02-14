@@ -1,7 +1,7 @@
 name := """play-scala-seed"""
 organization := "com.example"
 
-version := "1.0-SNAPSHOT"
+version := "1.0.8"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
