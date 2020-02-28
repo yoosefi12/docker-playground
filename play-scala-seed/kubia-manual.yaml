@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-manual-play-scala-seed
+spec:
+  containers:
+  - image: play-scala-seed:1.0.8
+    name: kubia
+    ports:
+    - containerPort: 8080
+      protocol: TCP

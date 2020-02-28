@@ -1,5 +1,6 @@
 logs
 target
+/.tar
 /.idea
 /.idea_modules
 /.classpath
